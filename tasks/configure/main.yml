@@ -1,0 +1,33 @@
+- name: "Create user config file directories, if not exist"
+  ansible.builtin.file:
+    path: "{{ rofi_config_dir }}"
+    state: directory
+    owner: "{{ rofi_user_name }}"
+    mode: '755'
+  become: true
+  become_user: root
+
+- name: "Configure general rofi options in '{{ rofi_config_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ rofi_config_file_path }}"
+    src: "config.j2"
+    owner: "{{ rofi_user_name }}"
+    mode: '644'
+    force: yes
+  vars:
+    rofi_config_file_path: "{{ rofi_config_dir }}/{{ rofi_config_file_name }}"
+  become: true
+  become_user: root
+
+- name: "Configure rofi custom theme in '{{ rofi_theme_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ rofi_theme_file_path }}"
+    src: "custom_theme.j2"
+    owner: "{{ rofi_user_name }}"
+    mode: '644'
+    force: yes
+  vars:
+    rofi_theme_file_path: "{{ rofi_config_dir }}/{{ rofi_theme_file_name }}"
+  become: true
+  become_user: root
+

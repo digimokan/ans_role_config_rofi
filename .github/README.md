@@ -54,6 +54,8 @@ Install and configure the rofi application launcher.
          ansible.builtin.include_role:
            name: ans_role_config_rofi
            public: yes
+         vars:
+           rofi_user_name: "user2"
    ```
 
 ## Role Options
@@ -61,6 +63,10 @@ Install and configure the rofi application launcher.
 See the role `defaults` file, for overridable vars:
 
   * [defaults/main/](../defaults/main/)
+
+Define these _required_ vars for the role:
+
+  * `rofi_user_name`: user name of main rofi user
 
 ## Contributing
 

@@ -1,3 +1,12 @@
 # command to execute to start rofi
-rofi_start_app_launcher_cmd: "rofi -show run"
+rofi_start_app_launcher_cmd: "rofi"
+
+# effective, user-based rofi config dir
+rofi_config_dir: "/home/{{ rofi_user_name }}/.config/rofi"
+
+# rofi config file name
+rofi_config_file_name: "config.rasi"
+
+# rofi theme file name
+rofi_theme_file_name: "custom_theme.rasi"
 

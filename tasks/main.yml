@@ -1,0 +1,6 @@
+- name: "Install rofi"
+  ansible.builtin.include_tasks: install/main.yml
+
+- name: "Configure rofi"
+  ansible.builtin.include_tasks: configure/main.yml
+
