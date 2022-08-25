@@ -1,0 +1,3 @@
+# command to execute to start rofi
+rofi_start_app_launcher_cmd: "rofi -show run"
+
