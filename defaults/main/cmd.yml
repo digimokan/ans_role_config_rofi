@@ -1,5 +1,5 @@
 # command to execute to start rofi
-rofi_start_app_launcher_cmd: "rofi"
+rofi_start_app_launcher_cmd: "rofi -show"
 
 # effective, user-based rofi config dir
 rofi_config_dir: "/home/{{ rofi_user_name }}/.config/rofi"
