@@ -2,67 +2,51 @@
 // ANSIBLE-MANAGED CONFIGURATION FILE
 // Refs: modified material theme
 
+///////////////////////////////////////////////////////////////////////////////
+// ROFI WINDOW GLOBAL SETTINGS
+///////////////////////////////////////////////////////////////////////////////
+
 * {
-  base00: #263238;
-  base01: #2E3C43;
-  base02: #314549;
-  base03: #546E7A;
-  base04: #B2CCD6;
-  base05: #EEFFFF;
-  base06: #EEFFFF;
-  base07: #FFFFFF;
-  base08: #F07178;
-  base09: #F78C6C;
-  base0A: #FFCB6B;
-  base0B: #C3E88D;
-  base0C: #89DDFF;
-  base0D: #00BCD4;
-  base0E: #C792EA;
-  base0F: #FF5370;
-  spacing: 0;
   background-color: transparent;
-  font: "{{ rofi_font }}";
+  text-color: {{ color.text }};
 }
 
 window {
   transparency: "real";
   fullscreen: false;
   width: 50%;                  /* width % of screen size */
-  background-color: #263238CC; /* base00 + CC (80% opacity) */
   border-radius: 10px;
+  font: "{{ rofi_font }}";
+  background-color: {{ color.main_window_bg }};
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// MAIN ROFI WINDOW CONTAINER
+///////////////////////////////////////////////////////////////////////////////
 
 mainbox {
   children: [inputbar, listview];
   spacing: 30px;
   padding: 30px 10px;
   border: 1px;
-  border-color: @base0C;
+  border-color: {{ color.main_window_border }};
 }
 
+///////////////////////////////////////////////////////////////////////////////
+// TOP USER-INPUT BAR WIDGET
+///////////////////////////////////////////////////////////////////////////////
+
 inputbar {
+  children: [entry, case-indicator];
   padding: 10px 30px;
   margin: 0 10px 0 30px;
   border: 1px;
-  border-color: @base09;
-  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+  border-color: {{ color.user_input_bar_border }};
 }
 
-prompt {
-  text-color: @base0A;
-  children: [prompt, textbox-prompt-colon, entry, case-indicator];
-}
-
-textbox-prompt-colon {
-  expand: false;
-  str: ":";
-  margin: 0 1ch 0 0;
-  text-color: @base0A;
-}
-
-entry {
-  text-color: @base07;
-}
+///////////////////////////////////////////////////////////////////////////////
+// BOTTOM APP-LIST WIDGET
+///////////////////////////////////////////////////////////////////////////////
 
 listview {
   scrollbar: true;
@@ -71,36 +55,20 @@ listview {
 }
 
 scrollbar {
-  background-color: @base03;
-  handle-color: @base04;
   handle-width: 10px;
   border: 0 1px;
-  border-color: @base04;
   margin: 0 0 0 20px;
+  handle-color: {{ color.scroll_bar_handle }};
+  border-color: {{ color.scroll_bar_fg }};
+  background-color: {{ color.scroll_bar_bg }};
 }
 
 element {
-  padding: 10px;
+  padding: 1.5%;
   highlight: bold underline;
 }
 
-element normal, element alternate {
-  background-color: transparent;
-}
-
 element selected {
-  background-color: @base03;
-}
-
-element normal normal, element selected normal, element alternate normal {
-  text-color: @base07;
-}
-
-element normal urgent, element selected urgent, element alternate urgent {
-  text-color: @base0F;
-}
-
-element normal active, element selected active, element alternate active {
-  text-color: @base0B;
+  background-color: {{ color.list_selection_bg }};
 }
 

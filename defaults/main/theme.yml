@@ -1,3 +1,14 @@
 # font to use for all rofi text
 rofi_font: 'monospace 10'
 
+# color for various window elements
+color:
+  main_window_border: 'rgba(137, 221, 255, 1.0)'
+  main_window_bg: 'rgba(38, 50, 56, 0.8)'
+  user_input_bar_border: 'rgba(247, 140, 108, 1.0)'
+  scroll_bar_handle: 'rgba(184, 209, 196, 1.0)'
+  scroll_bar_bg: 'rgba(105, 120, 125, 1.0)'
+  scroll_bar_border: 'rgba(120, 138, 123, 1.0)'
+  list_selection_bg: 'rgba(84, 110, 122, 1.0)'
+  text: 'rgba(245, 255, 255, 1.0)'
+
