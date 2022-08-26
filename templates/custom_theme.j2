@@ -14,8 +14,7 @@
 window {
   transparency: "real";
   fullscreen: false;
-  width: 50%;                  /* width % of screen size */
-  border-radius: 10px;
+  width: {{ main_window.screen_width_pct }}%;
   font: "{{ rofi_font }}";
   background-color: {{ color.main_window_bg }};
 }
@@ -26,26 +25,26 @@ window {
 
 mainbox {
   children: [inputbar, listview];
-  spacing: 30px;
-  padding: 30px 10px;
-  border: 1px;
+  spacing: {{ main_window.space_between_boxes_px }}px;
+  padding: {{ main_window.padding_vertical_px }}px {{ main_window.padding_horizontal_px }}px;
+  border: {{ main_window.border_width_px }}px;
   border-color: {{ color.main_window_border }};
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// TOP USER-INPUT BAR WIDGET
+// TOP USER-INPUT BAR BOX
 ///////////////////////////////////////////////////////////////////////////////
 
 inputbar {
   children: [entry, case-indicator];
-  padding: 10px 30px;
-  margin: 0 10px 0 30px;
-  border: 1px;
+  padding: {{ user_input_box.padding_vertical_px }}px {{ user_input_box.padding_horizontal_px }}px;
+  margin: 0px {{ user_input_box.margin_right_horizontal_px }}px 0px {{ user_input_box.margin_left_horizontal_px }}px;
+  border: {{ user_input_box.border_width_px }}px;
   border-color: {{ color.user_input_bar_border }};
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// BOTTOM APP-LIST WIDGET
+// BOTTOM APP-LIST BOX
 ///////////////////////////////////////////////////////////////////////////////
 
 listview {

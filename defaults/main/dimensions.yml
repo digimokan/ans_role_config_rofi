@@ -1,0 +1,23 @@
+# main window container padding, spacing, and border
+main_window:
+  # total displayed window width, as percentage of screen size
+  screen_width_pct: '50'
+  # padding between window border and child boxes, in pixels
+  padding_vertical_px: '25'
+  padding_horizontal_px: '10'
+  # the (horizontal) space between child inputbar and listview boxes
+  space_between_boxes_px: '30'
+  # border width, in pixels
+  border_width_px: '1'
+
+# user-input box padding, spacing, and border
+user_input_box:
+  # padding between box border and input text
+  padding_vertical_px: '10'
+  padding_horizontal_px: '20'
+  # margins between box border and containing window
+  margin_left_horizontal_px: '30'
+  margin_right_horizontal_px: '10'
+  # border width, in pixels
+  border_width_px: '1'
+

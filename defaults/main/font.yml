@@ -1,0 +1,3 @@
+# font to use for all rofi text
+rofi_font: 'monospace 10'
+

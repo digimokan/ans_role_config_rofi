@@ -1,6 +1,3 @@
-# font to use for all rofi text
-rofi_font: 'monospace 10'
-
 # color for various window elements
 color:
   main_window_border: 'rgba(137, 221, 255, 1.0)'
