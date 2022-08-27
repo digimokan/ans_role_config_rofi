@@ -49,21 +49,21 @@ inputbar {
 
 listview {
   scrollbar: true;
-  margin: 0 10px 0 30px;
-  lines: 10;              /* show this number-of-rows */
+  margin: 0px {{ list_view_box.margin_right_horizontal_px }}px 0px {{ list_view_box.margin_left_horizontal_px }}px;
+  lines: {{ list_view_box.row_height }};
 }
 
 scrollbar {
-  handle-width: 10px;
-  border: 0 1px;
-  margin: 0 0 0 20px;
+  handle-width: {{ scroll_bar.width_px }}px;
+  margin: 0px 0px 0px {{ scroll_bar.margin_left_horizontal_px }}px;
+  border: 0px {{ scroll_bar.border_width_px }}px;
   handle-color: {{ color.scroll_bar_handle }};
   border-color: {{ color.scroll_bar_border }};
   background-color: {{ color.scroll_bar_bg }};
 }
 
 element {
-  padding: 1.5%;
+  padding: {{ list_view_box.padding_list_element_px }}px;
   highlight: bold underline;
 }
 
