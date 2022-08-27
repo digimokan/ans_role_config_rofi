@@ -1,6 +1,10 @@
 # command to execute to start rofi
 rofi_start_app_launcher_cmd: "rofi -show"
 
+# if true, search for apps to launch in system dirs containing ".desktop" files
+# if false, search for apps to launch in system PATH
+launch_dot_desktop_apps: true
+
 # effective, user-based rofi config dir
 rofi_config_dir: "/home/{{ rofi_user_name }}/.config/rofi"
 
