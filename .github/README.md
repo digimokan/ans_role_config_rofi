@@ -53,7 +53,7 @@ Install and configure the rofi application launcher.
        - name: "Install and configure the rofi application launcher"
          ansible.builtin.include_role:
            name: ans_role_config_rofi
-           public: yes
+           public: true
          vars:
            rofi_user_name: "user2"
    ```
